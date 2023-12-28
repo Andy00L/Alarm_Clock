@@ -13,6 +13,7 @@ def alarm(secondes):
     intervalle_temps = 0
     
     print(CLEAR)
+    
     while intervalle_temps < secondes:
         time.sleep(1)
         intervalle_temps += 1
@@ -22,18 +23,25 @@ def alarm(secondes):
         
         print(f"{CLEAR_AND_RETURN}Il reste: {minutes_restantes:02d} : {secondes_restantes:02d}")
     playsound("One Piece - Drums of Liberation .mp3")
-        
+  
+print(CLEAR)
+print(CLEAR_AND_RETURN)    
 MINUTES = input("Combien de minutes: ")
 
 # verfifie que le nombre enter est un chiffre
 while not MINUTES.isdigit():
-    MINUTES = input("Veillez rentrez un chiffre: ")
+    print(CLEAR)
+    print(CLEAR_AND_RETURN)
+    MINUTES = input("Veillez rentrez un chiffre (minutes): ")
     
 SECONDES = input("Combien de secondes: ")
 
 # verfifie que le nombre enter est un chiffre
 while not SECONDES.isdigit():
-    SECONDES = input("Veillez rentrez un chiffre ")
-    
+    print(CLEAR)
+    print(CLEAR_AND_RETURN)
+    SECONDES = input("Veillez rentrez un chiffre (seconde): ")
+ 
 TOTAL = (int(MINUTES) * 60) + int(SECONDES)
+
 alarm(TOTAL)
